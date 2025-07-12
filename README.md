@@ -58,7 +58,7 @@ Verificar:
   - Erros de timeout na aplicação
 
 ## 2. Ferramentas e Comandos
-~~~
+
 | Finalidade      | Ferramenta                    | Comando/uso                     |
 | --------------- | ----------------------------- | ------------------------------- |
 | Métricas        | Grafana / Datadog             | Dashboards + alertas            |
@@ -68,7 +68,7 @@ Verificar:
 | Banco de dados  | RDS Insights                  | Slow queries, conexões          |
 | ArgoCD          | Argo UI / CLI                 | Confirmar estado da release     |
 
-~~~
+
 
 ## 3. Hipóteses Prováveis
 
