@@ -95,7 +95,7 @@ Verificar:
   - NAT Gateway saturado (muito comum com RDS)
 
 ##  4. Ações Imediatas para Mitigar Impacto
-~~~
+
 | Ação                                         | Justificativa                                |
 | -------------------------------------------- | -------------------------------------------- |
 | Escalar réplicas de `payment-api`            | Reduz impacto e ajuda a atender tráfego      |
@@ -105,17 +105,17 @@ Verificar:
 | Habilitar autoscaling (caso aplicável)       | Lidar com carga flutuante                    |
 | Rota fallback (ex: fila ou resposta default) | Se disponível, garantir continuidade parcial |
 
-~~~
+
 
 ## 5. Comunicação Durante o Incidente
-~~~
+
 | Canal                  | Mensagem (exemplo)                                                                                                                       |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Slack #ops-alerts      | “🚨 Incidente em produção: `payment-api` com alta latência (>2s) e erros de banco detectados. Investigando. Atualizações a cada 15 min.” |
 | Atualizações regulares | Status do diagnóstico, ações tomadas e próximas etapas                                                                                   |
 | Finalização            | Causa raiz, impacto, mitigação e ações preventivas                                                                                       |
 
-~~~
+
 
 ##  6. Documentação Pós-Incidente (PIR - Post Incident Review)
 
@@ -130,7 +130,7 @@ Verificar:
   - Impacto: Processamento de pagamentos afetado
 
 ### Linha do tempo
-~~~
+
 | Horário | Evento                                            |
 | ------- | ------------------------------------------------- |
 | 10:05   | Alerta de latência acionado                       |
@@ -139,14 +139,14 @@ Verificar:
 | 10:30   | Escaladas réplicas e aumentada capacidade do pool |
 | 10:45   | Latência estabilizada                             |
 
-~~~
+
 
 ### Causa Raiz
 
 Aumento de carga → saturação do pool de conexões com RDS → timeouts
 
 ### Melhorias preventivas
-~~~
+
 | Ação                                      | Status     |
 | ----------------------------------------- | ---------- |
 | Implementar autoescalonamento de pods     | 🔧 A fazer |
@@ -155,7 +155,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 | Dashboards com alertas de saturação de DB | ✅ Feito    |
 | Configurar fallback para erro de DB       | 🔧 A fazer |
 
-~~~
+
 
 ## Modelo de Incidente
 
@@ -172,7 +172,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 ~~~
 
 ### Linha do Tempo
-~~~
+
 | Horário | Evento |
 |--------|--------|
 | 10:05  | Alerta de latência da API acionado (> 2s por 10min) |
@@ -180,7 +180,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 | 10:15  | Confirmado gargalo no pool de conexões com RDS |
 | 10:30  | Escalado número de réplicas + ajuste do pool |
 | 10:45  | Métricas estabilizadas, latência voltou ao normal |
-~~~
+
 
 ### Causa Raiz
 
@@ -194,7 +194,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 ~~~
  
 ### Ações Tomadas
-~~~
+
 | Ação | Status |
 |------|--------|
 | Verificação de pods e métricas de recursos | ✅ |
@@ -202,7 +202,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 | Ajuste no pool de conexões da aplicação | ✅ |
 | Verificação de locks/slow queries no RDS | ✅ |
 | Análise de logs e traces distribuídos | ✅ |
-~~~
+
 
 ### Hipóteses Verificadas
 ~~~
@@ -220,7 +220,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 ~~~
 
 ### Melhorias Preventivas
-~~~
+
 | Ação Preventiva | Status |
 |-----------------|--------|
 | Adicionar monitoramento do uso do pool de conexões | 🔧 A fazer |
@@ -228,7 +228,7 @@ Aumento de carga → saturação do pool de conexões com RDS → timeouts
 | Melhorar limites de recurso dos pods | ✅ Feito |
 | Implementar fallback para falha no banco | 🔧 A fazer |
 | Adicionar alertas para `DBConnectionTimeout` | ✅ Feito |
-~~~
+
 
 ### Comunicação
 ~~~
