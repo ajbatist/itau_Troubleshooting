@@ -1,5 +1,5 @@
 # itau_Troubleshooting
-Defafio Troubleshooting
+Desafio Troubleshooting
 
 ## 1. Diagnóstico: Passos Imediatos
 
