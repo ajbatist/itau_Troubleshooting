@@ -87,6 +87,7 @@ Verificar:
    - AWS CLI (aws rds describe-db-instances --db-instance-identifier your-db-instance-id)
      
    - Cliente de terceiros:
+     
       a) DBeaver / Squirrel (Multi banco de dados)
      
       b) MySQL Workbench (Para MySQL)
