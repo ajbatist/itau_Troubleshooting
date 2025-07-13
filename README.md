@@ -81,16 +81,24 @@ Verificar:
   - Lock em queries pesadas
 
  ####  1.1 Ferramentas
+ 
    - Console AWS
+     
    - AWS CLI (aws rds describe-db-instances --db-instance-identifier your-db-instance-id)
+     
    - Cliente de terceiros:
       a) DBeaver / Squirrel (Multi banco de dados)
+     
       b) MySQL Workbench (Para MySQL)
+     
       c) pgAdmin (Para PostgreSQL)
+     
       d) SQLDeveloper (Para Oracle)
+     
       e) entre outras ferramentas
 
  #### 1.2 Informações importantes
+ 
     A Segurança ao acessar o RDS é crucial, então quem for manipular as conexões deve ter as permissões, credenciais e liberações de rede pré-aprovadas pela companhia.
 
 ### 2. Recursos saturados no pod ou cluster:
