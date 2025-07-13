@@ -72,7 +72,7 @@ Verificar:
 
 ## 3. Hipóteses Prováveis
 
-1. Problemas de conexão com RDS:
+### 1. Problemas de conexão com RDS:
 
   - Exaustão de conexões
 
@@ -80,7 +80,7 @@ Verificar:
 
   - Lock em queries pesadas
 
-  1.1 Ferramentas
+ ####  1.1 Ferramentas
    - Console AWS
    - AWS CLI (aws rds describe-db-instances --db-instance-identifier your-db-instance-id)
    - Cliente de terceiros:
@@ -90,20 +90,20 @@ Verificar:
       d) SQLDeveloper (Para Oracle)
       e) entre outras ferramentas
 
- 1.2 Informações importantes
+ #### 1.2 Informações importantes
     A Segurança ao acessar o RDS é crucial, então quem for manipular as conexões deve ter as permissões, credenciais e liberações de rede pré-aprovadas pela companhia.
 
-2. Recursos saturados no pod ou cluster:
+### 2. Recursos saturados no pod ou cluster:
 
   - CPU/memória insuficiente (throttling)
 
   -  Pool de conexões não dimensionado
 
-3. Picos de carga:
+### 3. Picos de carga:
    
   - Tráfego aumentou sem escala proporcional
     
-4. Problemas de rede (NAT, DNS, etc.):
+### 4. Problemas de rede (NAT, DNS, etc.):
    
   - NAT Gateway saturado (muito comum com RDS)
 
